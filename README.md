@@ -14,10 +14,10 @@
 
 ## 👥 멤버
 
-- 송문석
-- 유진
-- 조안나
-- 홍석주
+- [송문석(D2-G2)](https://github.com/D2-G2)
+- [유진(ovovvvvv)](https://github.com/ovovvvvv)
+- [조안나(opehn)](https://github.com/opehn)
+- [홍석주(hsju0202)](https://github.com/hsju0202)
 
 <br/>
 
