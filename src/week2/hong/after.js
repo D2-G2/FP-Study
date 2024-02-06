@@ -12,7 +12,7 @@ function affiliatePayout(affiliates) {
     const payoutList = _filter(bankCodeAndOweds, isOwedGreaterThan);
 
     //송금하기
-    _each(payoutList, sendPayout);
+    _each(payoutList, sendPayout2Affiliate);
 }
 
 function makeBankCodeAndOwed(affiliate) {
@@ -27,11 +27,16 @@ function calcOwed(sales, commission) { //비즈니스 로직
 }
 
 function isOwedGreaterThan(affiliates) { //비즈니스 로직
-    return affiliates.owed > 100;
+    return affiliates.owed > 200;
 }
 
-function sendPayout(affiliate) { //비즈니스 로직
-    console.log(`bank code : ${affiliate.bank_code}, fee : ${affiliate.owed}`);
+function sendPayout2Affiliate(affiliate) { //비즈니스 로직
+    const {bank_code, owed} = affiliate;
+    sendPayout(bank_code, owed);
+}
+
+function sendPayout(bank_code, fee) { //비즈니스 로직
+    console.log(`bank code : ${bank_code}, fee : ${fee}`);
 }
 
 function _map(list, mapper) { //유틸리티 함수
@@ -48,6 +53,7 @@ function _each(list, iter) { //유틸리티 함수
     for (let i = 0; i < list.length; i++) {
         iter(list[i]);
     }
+
     return list;
 }
 
