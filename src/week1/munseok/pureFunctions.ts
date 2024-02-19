@@ -1,5 +1,8 @@
 // 금액 계산
-const calculateTotalAmount = (items: { menuId: string; quantity: number }[], menuData: Menu[]): number => {
+const calculateTotalAmount = (
+  items: { menuId: string; quantity: number }[],
+  menuData: Menu[]
+): number => {
   return items.reduce((total, item) => {
     const menu = menuData.find((menu) => menu.name === item.menuId);
     return total + (menu ? menu.price * item.quantity : 0);
@@ -23,7 +26,12 @@ const calculateDeliveryTime = (order: Order, currentStatus: string): Date => {
 };
 
 // 로그인 유효성 검증
-const verifyLogin = (loginInfo: LoginInfo, customerData: Customer[]): boolean => {
-  const customer = customerData.find((customer) => customer.loginInfo.username === loginInfo.username);
+const verifyLogin = (
+  loginInfo: LoginInfo,
+  customerData: Customer[]
+): boolean => {
+  const customer = customerData.find(
+    (customer) => customer.loginInfo.username === loginInfo.username
+  );
   return customer ? customer.loginInfo.password === loginInfo.password : false;
 };
