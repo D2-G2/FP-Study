@@ -30,6 +30,11 @@ function removeFromCart(cart, productId) {
 
 // 일반적인 비지니스 규칙: 장바구니에 상품을 추가할 때, 이미 추가된 상품인 경우 수량을 증가시킨다.
 function addToCart(cart, product) {
+  return processCartItem(cart, product);
+}
+
+// 상품이 이미 장바구니에 존재하는지 확인하고 수량을 증가시키는 함수
+function processCartItem(cart, product) {
   const existingProductIndex = toFindIndex(cart, product);
 
   if (existingProductIndex !== -1) {
