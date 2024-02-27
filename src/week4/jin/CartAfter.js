@@ -60,3 +60,5 @@ function updateCartForExistingProduct(cart, product, existingProductIndex) {
 
 // 장바구니 시스템
 let cart = [];
+
+// 장바구니의 기본적인 시스템, 넣고 빼고 수정하고만 추상화 벽이면 괜찮지 않을까?
